@@ -1,9 +1,10 @@
-setwd("/Users/pranavkulkarni/OneDrive - Universiteit Utrecht/Reproducible code workshop")
+getwd()
+setwd("/Users/pranavkulkarni/workshop_cc/")
 
 library(data.table)
 library(dplyr)
 
-df1 <- fread(file = "simulated_df.csv", header = T,
+df1 <- fread(file = "data/raw/simulated_df.csv", header = T,
              nThread = 2)
 
 str(df1)
@@ -11,6 +12,11 @@ summary(df1)
 
 df1$year <- as.character(df1$year)
 df1$HerdIdentifier <- as.factor(df1$HerdIdentifier)
+
+sink("results/output/summary_df.txt")
+paste("summary of df")
+summary(df1)
+sink()
 
 hist(df1$numberculled)
 qqnorm(log(df1$numberculled))
