@@ -1,0 +1,5 @@
+                           lifeprodnculled numberproductiondaysculled fatculled proteinculled
+lifeprodnculled                 1.00000000                 0.94281952 0.1198072   -0.04177525
+numberproductiondaysculled      0.94281952                 1.00000000 0.1117450   -0.07860986
+fatculled                       0.11980715                 0.11174496 1.0000000    0.35058884
+proteinculled                  -0.04177525                -0.07860986 0.3505888    1.00000000
