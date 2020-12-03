@@ -1,0 +1,33 @@
+[1] "summary of df"
+  agedayslive   agedaysculled    numberlive      numberculled      lifeprodn    
+ Min.   :1102   Min.   : 867   Min.   :-261.0   Min.   :-57.00   Min.   : 4245  
+ 1st Qu.:1537   1st Qu.:1898   1st Qu.:  83.0   1st Qu.: 19.00   1st Qu.:18127  
+ Median :1627   Median :2058   Median : 140.0   Median : 33.00   Median :20649  
+ Mean   :1627   Mean   :2059   Mean   : 139.8   Mean   : 32.95   Mean   :20653  
+ 3rd Qu.:1717   3rd Qu.:2218   3rd Qu.: 196.0   3rd Qu.: 47.00   3rd Qu.:23191  
+ Max.   :2245   Max.   :3155   Max.   : 540.0   Max.   :137.00   Max.   :39947  
+                                                                                
+ lifeprodnculled numberproductiondayslive numberproductiondaysculled      fat       
+ Min.   :  348   Min.   : 318.0           Min.   : 177               Min.   :3.000  
+ 1st Qu.:25500   1st Qu.: 689.0           1st Qu.: 989               1st Qu.:4.000  
+ Median :29795   Median : 767.0           Median :1127               Median :4.000  
+ Mean   :29815   Mean   : 766.6           Mean   :1127               Mean   :4.265  
+ 3rd Qu.:34104   3rd Qu.: 844.0           3rd Qu.:1266               3rd Qu.:5.000  
+ Max.   :59076   Max.   :1336.0           Max.   :2090               Max.   :5.000  
+                                                                                    
+   fatculled        protein      proteinculled   numberheifers    HerdIdentifier 
+ Min.   :3.000   Min.   :3.000   Min.   :3.000   Min.   :-57.00   5      :24451  
+ 1st Qu.:4.000   1st Qu.:3.000   1st Qu.:3.000   1st Qu.: 20.00   8      :10743  
+ Median :4.000   Median :4.000   Median :4.000   Median : 35.00   7      : 9794  
+ Mean   :4.345   Mean   :3.671   Mean   :3.676   Mean   : 34.82   2      : 7998  
+ 3rd Qu.:5.000   3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.: 50.00   10     : 7396  
+ Max.   :6.000   Max.   :4.000   Max.   :4.000   Max.   :140.00   1      : 6665  
+                                                                  (Other):20280  
+     year          
+ Length:87327      
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   
+                   
