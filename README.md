@@ -28,7 +28,7 @@ project containing example code and dummy data for reproducible code workshop.
 │   ├── figures        <- Figures for the manuscript or reports (PG)
 │   └── output         <- Other output for the manuscript or reports (PG)
 └── src                <- Source code for this project (HW)
-
+└── workshop_cc.Rproj  <- R-project file 
 ```
 
 
