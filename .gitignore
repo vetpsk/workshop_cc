@@ -1,3 +1,4 @@
 # exclude compiled binaries and external models
 /bin
 
+.Rproj.user
