@@ -4,7 +4,10 @@ Version 0.1
 
 Project containing example code and dummy data for reproducible code workshop. Various commits with improvement in the code are attempted in this workshop.
 
-
+<p align="center">
+  <img src="https://www.uu.nl/themes/custom/corp/src/images/logo-nl.svg" width="600px" alt="Sherloq" />
+  <br><b>Experiment to add image</b>
+</p>
 ## Project organization
 
 ```
