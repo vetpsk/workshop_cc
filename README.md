@@ -4,8 +4,14 @@ Version 0.1
 
 Project containing example code and dummy data for reproducible code workshop. Various commits with improvement in the code are attempted in this workshop.
 
-<p align="center">
-  <img src="https://www.uu.nl/themes/custom/corp/src/images/logo-nl.svg" width="600px" alt="Sherloq" />
+## The example
+Objective: Developing a modeling strategy for predicting number of culled dairy cows based on associated covariates.
+
+### General Background
+On average, 25-30% of Dutch dairy cows are replaced annually by young heifers to maximize the economic output of the dairy farms. The dairy cow replacement problem has been extensively studied in the past with respect to economic benefit. But nowadays, new goals in terms of environmental sustainability and better welfare for animals are important to consider. The main aim of this project is to identify and analyse the herd characteristics associated with culling decisions in dairy cattle.
+
+<p align="right">
+  <img src="https://www.openaccess.nl/sites/www.openaccess.nl/files/documenten/open-access-logo-png-transparent.png" width="300px" alt="logo" />
   <br><b>Experiment to add image</b>
 </p>
 ## Project organization
