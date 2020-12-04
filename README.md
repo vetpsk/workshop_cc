@@ -2,7 +2,7 @@
 
 Version 0.1
 
-project containing example code and dummy data for reproducible code workshop.
+Project containing example code and dummy data for reproducible code workshop. Various commits with improvement in the code are attempted in this workshop.
 
 
 ## Project organization
