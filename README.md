@@ -1,7 +1,7 @@
 # reproducible workshop
 
 Version 0.1
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/git@github.com:vetpsk/workshop_cc.git/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/vetpsk/workshop_cc/master)
 
 Project containing example code and dummy data for reproducible code workshop. Various commits with improvement in the code are attempted in this workshop.
 
