@@ -1,4 +1,4 @@
-# reproducible workshop
+# Example project for reproducible workshop
 
 Version 0.1
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/vetpsk/workshop_cc/master)
