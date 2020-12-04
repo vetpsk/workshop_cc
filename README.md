@@ -14,7 +14,9 @@ On average, 25-30% of Dutch dairy cows are replaced annually by young heifers to
   <img src="https://www.openaccess.nl/sites/www.openaccess.nl/files/documenten/open-access-logo-png-transparent.png" width="300px" alt="logo" />
   <br><b>Experiment to add image</b>
 </p>
+
 ## Project organization
+
 
 ```
 .
@@ -39,7 +41,8 @@ On average, 25-30% of Dutch dairy cows are replaced annually by young heifers to
 └── src                <- Source code for this project (HW)
 └── workshop_cc.Rproj  <- R-project file 
 ```
-
+## Dependencies and session info
+For more information, please view [dependencies](../config/Dependencies)
 
 ## License
 
