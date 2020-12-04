@@ -1,39 +1,27 @@
-Model names as they appear in output[[1]]
-[1] "lm1"
-
-[[2]]
-[1] "lm2"
-
-[[3]]
-[1] "lm3"
-
-[[4]]
-[1] "lm4"
-
-[[5]]
-[1] "lm5"
-
-AIC[[1]]
+[1] "model names as they appear in output"
+[1] "lm"     "glm"    "lmer1"  "lmer2"  "glmer1" "glmer2"
+[[1]]
 [1] 602451.5
 
 [[2]]
-[1] 736234.5
+[1] 602451.5
 
 [[3]]
 [1] 602531.8
 
 [[4]]
-[1] 602512.2
+[1] 736213.2
 
 [[5]]
+[1] 602512.2
+
+[[6]]
 [1] 736224.4
 
-summaries[[1]]
+[[1]]
 
 Call:
-lm(formula = numberculled ~ lifeprodnculled + numberproductiondaysculled + 
-    fatculled + proteinculled + numberheifers + year, data = df1, 
-    model = TRUE)
+lm(formula = form_list[[1]], data = df)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
@@ -69,50 +57,48 @@ F-statistic: 1.267e+04 on 15 and 80487 DF,  p-value: < 2.2e-16
 [[2]]
 
 Call:
-glm(formula = numberculled ~ lifeprodnculled + numberproductiondaysculled + 
-    fatculled + proteinculled + numberheifers + year, family = poisson(link = "log"), 
-    data = df1)
+glm(formula = form_list[[1]], data = df)
 
 Deviance Residuals: 
-     Min        1Q    Median        3Q       Max  
--10.6519   -1.3562   -0.0134    1.2088    6.9191  
+    Min       1Q   Median       3Q      Max  
+-37.742   -6.929   -0.116    6.824   42.670  
 
 Coefficients:
-                             Estimate Std. Error z value Pr(>|z|)    
-(Intercept)                 2.607e+00  8.990e-03 289.998  < 2e-16 ***
-lifeprodnculled             2.429e-05  3.172e-07  76.574  < 2e-16 ***
-numberproductiondaysculled -6.978e-04  9.381e-06 -74.377  < 2e-16 ***
-fatculled                  -3.541e-02  1.630e-03 -21.716  < 2e-16 ***
-proteinculled               7.318e-02  1.329e-03  55.041  < 2e-16 ***
-numberheifers               2.187e-02  3.673e-05 595.350  < 2e-16 ***
-year2010                    6.084e-03  3.207e-03   1.897 0.057833 .  
-year2011                    1.356e-02  3.087e-03   4.395 1.11e-05 ***
-year2012                    9.357e-03  3.038e-03   3.080 0.002071 ** 
-year2013                    1.452e-02  2.984e-03   4.865 1.14e-06 ***
-year2014                    1.125e-02  2.946e-03   3.819 0.000134 ***
-year2015                    1.704e-02  2.898e-03   5.880 4.11e-09 ***
-year2016                    1.061e-02  2.916e-03   3.637 0.000276 ***
-year2017                    7.276e-03  2.889e-03   2.518 0.011794 *  
-year2018                    1.422e-02  2.979e-03   4.774 1.81e-06 ***
-year2019                    9.030e-03  3.002e-03   3.008 0.002629 ** 
+                             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                -3.804e+00  5.229e-01  -7.275 3.50e-13 ***
+lifeprodnculled             9.721e-04  1.959e-05  49.633  < 2e-16 ***
+numberproductiondaysculled -2.786e-02  5.789e-04 -48.126  < 2e-16 ***
+fatculled                   1.677e-01  9.341e-02   1.795 0.072590 .  
+proteinculled               2.359e+00  8.327e-02  28.331  < 2e-16 ***
+numberheifers               8.582e-01  2.381e-03 360.359  < 2e-16 ***
+year2010                    1.962e-01  1.960e-01   1.001 0.316937    
+year2011                    5.061e-01  1.888e-01   2.681 0.007349 ** 
+year2012                    3.474e-01  1.858e-01   1.870 0.061476 .  
+year2013                    5.703e-01  1.824e-01   3.127 0.001766 ** 
+year2014                    4.103e-01  1.798e-01   2.282 0.022489 *  
+year2015                    7.234e-01  1.772e-01   4.082 4.46e-05 ***
+year2016                    4.511e-01  1.779e-01   2.535 0.011247 *  
+year2017                    3.169e-01  1.764e-01   1.797 0.072417 .  
+year2018                    6.069e-01  1.821e-01   3.333 0.000861 ***
+year2019                    4.395e-01  1.832e-01   2.398 0.016476 *  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-(Dispersion parameter for poisson family taken to be 1)
+(Dispersion parameter for gaussian family taken to be 104.1144)
 
-    Null deviance: 838589  on 80502  degrees of freedom
-Residual deviance: 315025  on 80487  degrees of freedom
+    Null deviance: 28169869  on 80502  degrees of freedom
+Residual deviance:  8379852  on 80487  degrees of freedom
   (6824 observations deleted due to missingness)
-AIC: 736235
+AIC: 602451
 
-Number of Fisher Scoring iterations: 4
+Number of Fisher Scoring iterations: 2
 
 
 [[3]]
 Linear mixed model fit by REML ['lmerMod']
 Formula: numberculled ~ lifeprodnculled + numberproductiondaysculled +  
     fatculled + proteinculled + numberheifers + year + (1 | HerdIdentifier)
-   Data: df1
+   Data: df
 
 REML criterion at convergence: 602495.8
 
@@ -148,10 +134,56 @@ fit warnings:
 Some predictor variables are on very different scales: consider rescaling
 
 [[4]]
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: poisson  ( log )
+Formula: numberculled ~ lifeprodnculled + numberproductiondaysculled +  
+    fatculled + proteinculled + numberheifers + year + (1 | HerdIdentifier)
+   Data: df
+
+      AIC       BIC    logLik  deviance  df.resid 
+ 736213.2  736371.2 -368089.6  736179.2     80486 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-9.4053 -1.3012 -0.0115  1.2506  8.3219 
+
+Random effects:
+ Groups         Name        Variance  Std.Dev.
+ HerdIdentifier (Intercept) 1.686e-05 0.004106
+Number of obs: 80503, groups:  HerdIdentifier, 10
+
+Fixed effects:
+                             Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                 2.607e+00  9.086e-03 286.953  < 2e-16 ***
+lifeprodnculled             2.428e-05  3.172e-07  76.539  < 2e-16 ***
+numberproductiondaysculled -6.975e-04  9.382e-06 -74.340  < 2e-16 ***
+fatculled                  -3.538e-02  1.631e-03 -21.696  < 2e-16 ***
+proteinculled               7.307e-02  1.330e-03  54.958  < 2e-16 ***
+numberheifers               2.187e-02  3.673e-05 595.343  < 2e-16 ***
+year2010                    6.103e-03  3.208e-03   1.902 0.057144 .  
+year2011                    1.408e-02  3.090e-03   4.557 5.20e-06 ***
+year2012                    9.818e-03  3.042e-03   3.227 0.001249 ** 
+year2013                    1.503e-02  2.988e-03   5.031 4.88e-07 ***
+year2014                    1.218e-02  2.954e-03   4.125 3.71e-05 ***
+year2015                    1.811e-02  2.909e-03   6.225 4.81e-10 ***
+year2016                    1.169e-02  2.936e-03   3.980 6.89e-05 ***
+year2017                    8.456e-03  2.913e-03   2.903 0.003696 ** 
+year2018                    1.573e-02  3.009e-03   5.227 1.72e-07 ***
+year2019                    1.065e-02  3.033e-03   3.510 0.000448 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+fit warnings:
+Some predictor variables are on very different scales: consider rescaling
+convergence code: 0
+unable to evaluate scaled gradient
+Model failed to converge: degenerate  Hessian with 1 negative eigenvalues
+
+
+[[5]]
 Linear mixed model fit by REML ['lmerMod']
 Formula: numberculled ~ lifeprodnculled + numberproductiondaysculled +  
     fatculled + proteinculled + numberheifers + (1 | HerdIdentifier) +      (1 | year)
-   Data: df1
+   Data: df
 
 REML criterion at convergence: 602494.2
 
@@ -185,12 +217,12 @@ numberhefrs -0.516  0.468 -0.383  0.446 -0.098
 fit warnings:
 Some predictor variables are on very different scales: consider rescaling
 
-[[5]]
+[[6]]
 Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
  Family: poisson  ( log )
 Formula: numberculled ~ lifeprodnculled + numberproductiondaysculled +  
     fatculled + proteinculled + numberheifers + (1 | HerdIdentifier) +      (1 | year)
-   Data: df1
+   Data: df
 
       AIC       BIC    logLik  deviance  df.resid 
  736224.4  736298.7 -368104.2  736208.4     80495 
@@ -230,7 +262,7 @@ unable to evaluate scaled gradient
 Model failed to converge: degenerate  Hessian with 1 negative eigenvalues
 
 
-anova tables[[1]]
+[[1]]
 Analysis of Variance Table
 
 Response: numberculled
@@ -248,7 +280,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 [[2]]
 Analysis of Deviance Table
 
-Model: poisson, link: log
+Model: gaussian, link: identity
 
 Response: numberculled
 
@@ -256,13 +288,13 @@ Terms added sequentially (first to last)
 
 
                            Df Deviance Resid. Df Resid. Dev
-NULL                                       80502     838589
-lifeprodnculled             1    61574     80501     777015
-numberproductiondaysculled  1    20781     80500     756234
-fatculled                   1    83519     80499     672715
-proteinculled               1    11151     80498     661563
-numberheifers               1   346485     80497     315079
-year                       10       53     80487     315025
+NULL                                       80502   28169869
+lifeprodnculled             1  2226989     80501   25942880
+numberproductiondaysculled  1   755582     80500   25187298
+fatculled                   1  2855657     80499   22331641
+proteinculled               1   427776     80498   21903865
+numberheifers               1 13521389     80497    8382477
+year                       10     2625     80487    8379852
 
 [[3]]
 Analysis of Variance Table
@@ -276,6 +308,16 @@ year                         10     2689      269 2.5828e+00
 
 [[4]]
 Analysis of Variance Table
+                           npar Sum Sq Mean Sq   F value
+lifeprodnculled               1  67550   67550  67550.06
+numberproductiondaysculled    1  22820   22820  22820.01
+fatculled                     1  86105   86105  86105.10
+proteinculled                 1   9810    9810   9810.48
+numberheifers                 1 354515  354515 354515.16
+year                         10     58       6      5.82
+
+[[5]]
+Analysis of Variance Table
                            npar   Sum Sq  Mean Sq  F value
 lifeprodnculled               1  2227033  2227033  21390.6
 numberproductiondaysculled    1   755503   755503   7256.6
@@ -283,7 +325,7 @@ fatculled                     1  2855729  2855729  27429.2
 proteinculled                 1   427970   427970   4110.6
 numberheifers                 1 13520639 13520639 129865.2
 
-[[5]]
+[[6]]
 Analysis of Variance Table
                            npar Sum Sq Mean Sq F value
 lifeprodnculled               1  67544   67544   67544

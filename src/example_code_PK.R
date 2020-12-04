@@ -7,6 +7,7 @@ getwd()
 library(data.table)
 library(dplyr)
 library(lme4)
+library(docstring)
 
 # read data, its structure and summary
 df1 <- fread(file = "./data/raw/simulated_df.csv", header = T,
@@ -55,49 +56,47 @@ cor(df2)
 sink()
 
 # fit models, na.action = DEFAULT
+# declare functions
+form1 <- as.formula(numberculled ~ lifeprodnculled + numberproductiondaysculled +
+                      fatculled + proteinculled + numberheifers +
+                      year)
+form2 <- as.formula(numberculled ~ lifeprodnculled + numberproductiondaysculled +
+                      fatculled + proteinculled + numberheifers +
+                      year + (1 | HerdIdentifier))
+form3 <- as.formula(numberculled ~ lifeprodnculled + numberproductiondaysculled +
+                      fatculled + proteinculled + numberheifers +
+                      (1 | HerdIdentifier) + (1 | year))
+form_list <- list(form1, form2, form3)
 
-# model 1: linear model with only fixed effects
-lm1 <- lm(numberculled ~ lifeprodnculled + numberproductiondaysculled +
-            fatculled + proteinculled + numberheifers +
-            year, data = df1, model = TRUE)
+modelfunc <- function(df, formula_list) {
+  #' Fit different models
+  list(lm(formula = form_list[[1]] , data = df), 
+       glm(formula=form_list[[1]], data = df),
+       lmer(formula=form_list[[2]], data = df),
+       glmer(formula=form_list[[2]], data = df,
+             family = poisson(link = "log")),
+       lmer(formula=form_list[[3]], data = df),
+       glmer(formula=form_list[[3]], data = df,
+             family = poisson(link = "log")))
+}
+# model list with names
+model_list <- list(modelfunc(df1, form_list))
+model_list<- unlist(model_list, recursive = FALSE)
+names(model_list) <- c("lm", "glm", "lmer1", "lmer2", "glmer1", "glmer2")
 
-# model 2: non-linear model with poisson log link, only fixed effects
-lm2 <- glm(numberculled ~ lifeprodnculled + numberproductiondaysculled +
-             fatculled + proteinculled + numberheifers +
-             year, data = df1, family = poisson(link = "log"))
-
-# model 3: linear mixed effects model with only Herd random effect
-lm3 <- lmer(numberculled ~ lifeprodnculled + numberproductiondaysculled +
-              fatculled + proteinculled + numberheifers +
-              year + (1 | HerdIdentifier), data = df1)
-
-# model 4: linear mixed effects model with herd and year random effects
-lm4 <- lmer(numberculled ~ lifeprodnculled + numberproductiondaysculled +
-              fatculled + proteinculled + numberheifers +
-              (1 | HerdIdentifier) + (1 | year), data = df1)
-
-# model 5: non-linear mixed model with herd, year random and poisson log-link
-lm5 <- glmer(numberculled ~ lifeprodnculled + numberproductiondaysculled +
-               fatculled + proteinculled + numberheifers +
-               (1 | HerdIdentifier) + (1 | year), data = df1,
-             family = poisson(link = "log"))
 
 # model outputs and statistics
-ModelList <- as.list(paste0("lm", 1:5))
 
-lapply(ModelList, function(x)AIC(get(x)))
-lapply(ModelList, function(x)summary(get(x)))
-lapply(ModelList, function(x)anova(get(x)))
+aic_model <- lapply(model_list, AIC)
+summaries_model <- lapply(model_list, summary)
+anova_model <- lapply(model_list, anova)
 
 # save model results to text file
 
 sink("./results/output/model_output.txt")
-cat("Model names as they appear in output")
-ModelList
-cat("AIC")
-lapply(ModelList, function(x)AIC(get(x)))
-cat("summaries")
-lapply(ModelList, function(x)summary(get(x)))
-cat("anova tables")
-lapply(ModelList, function(x)anova(get(x)))
+"model names as they appear in output"
+names(model_list)
+aic_model
+summaries_model
+anova_model
 sink()
